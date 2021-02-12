@@ -12,7 +12,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-#define VALOR_MAX 10
+#define VALOR_MAX 20
 
 // a continuación se encuentran enlistados todos los rutinas utilizados para la realización de los procesos
 void ingreso_datos(char [VALOR_MAX]);
@@ -228,10 +228,10 @@ void desviacion_val(int  datos[VALOR_MAX], float *desviacion, float  cantidad)
         int medio=VALOR_MAX/2;
         int cont,val[medio];
         int valores[VALOR_MAX];
-        int pot[5];
+        int pot[medio];
         float div, desvi,acum=0, prom=0;
 //      printf("entra esto \n %ls",datos);
-        for (cont=0;cont<medio;cont ++)
+        for (cont=0;cont<cantidad;cont ++)
         {
                 val[cont] = datos[cont];
         //      printf("contenido: \n %d \n", val[cont]);
@@ -242,7 +242,7 @@ void desviacion_val(int  datos[VALOR_MAX], float *desviacion, float  cantidad)
         prom=prom/cantidad;
 //      printf("promedio es: %5.3f \n", prom);
 
-        for (cont=0;cont<medio;cont++)
+        for (cont=0;cont<cantidad;cont++)
 	{
                 pot[cont]=pow((datos[cont]-prom),2);
         //      printf("potencia #%d da: %d", cont, pot[cont]);
